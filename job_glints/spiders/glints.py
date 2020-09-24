@@ -38,8 +38,6 @@ class glints_scrape(scrapy.Spider):
         if self.total == 'all':
             self.total = 1000
 
-        print(self.total)
-
         yield scrapy.Request(url=self.api_url % (self.category, self.total), cookies=cookies, headers=self.header, callback=self.parse)
 
     def parse(self,response):
